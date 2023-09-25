@@ -9,13 +9,17 @@ function create(title, body) {
   fs.writeFileSync("./database/posts.json", JSON.stringify(posts, null, 4));
 }
 
-function index() {
-  console.log(posts?.data);
-}
+function index() {}
 
 function show(id) {}
 
-function update(id, title, body) {}
+function update(id, title, body) {
+  let updatePost = posts?.data?.find((post) => post?.id === id);
+  updatePost.title = title;
+  updatePost.body = body;
+
+  fs.writeFileSync("./database/posts.json", JSON.stringify(posts, null, 4));
+}
 
 function destroy(id) {}
 
