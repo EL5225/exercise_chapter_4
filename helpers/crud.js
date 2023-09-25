@@ -10,7 +10,7 @@ function create(title, body) {
 }
 
 function index() {
-  console.log(posts?.data);
+  console.log(posts.data);
 }
 
 function show(id) {}
