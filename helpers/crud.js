@@ -11,7 +11,10 @@ function create(title, body) {
 
 function index() {}
 
-function show(id) {}
+function show(id) { 
+  const post = posts.data.find(post => post.id === id);
+  console.log (post);
+}
 
 function update(id, title, body) {}
 
