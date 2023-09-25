@@ -9,9 +9,7 @@ function create(title, body) {
   fs.writeFileSync("./database/posts.json", JSON.stringify(posts, null, 4));
 }
 
-function index() {
-  console.log(posts?.data);
-}
+function index() {}
 
 function show(id) {}
 

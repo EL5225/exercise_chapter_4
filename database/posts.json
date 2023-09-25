@@ -1,15 +1,4 @@
 {
-    "id": 3,
-    "data": [
-        {
-            "id": 1,
-            "title": "Update title",
-            "body": "Update body"
-        },
-        {
-            "id": 2,
-            "title": "Update title 2",
-            "body": "Update body 2"
-        }
-    ]
+  "id": 1,
+  "data": []
 }
