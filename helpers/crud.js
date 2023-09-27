@@ -9,11 +9,13 @@ function create(title, body) {
   fs.writeFileSync("./database/posts.json", JSON.stringify(posts, null, 4));
 }
 
-function index() {}
+function index() {
+  console.log(posts.data);
+}
 
-function show(id) { 
-  const post = posts.data.find(post => post.id === id);
-  console.log (post);
+function show(id) {
+  const post = posts.data.find((post) => post.id === id);
+  console.log(post);
 }
 
 function update(id, title, body) {}
