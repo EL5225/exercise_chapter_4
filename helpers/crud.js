@@ -30,14 +30,13 @@ function index() {
 }
 
 function show(id) {
-  return new Promise((resolve, reject) => {
-    let post = posts.data.filter((p) => {
-      return p.id == id;
-    });
-
-    if (!post.length) return reject(`post with id ${id} is doesn't exist!`);
-
-    resolve(post[0]);
+  return new Promise(async (resolve, reject) => {
+    try {
+      const result = await pool.query('SELECT * FROM posts where id = $1', [id]);
+      resolve(result.rows[0]);
+    } catch (error) {
+      return reject(error);
+    }
   });
 }
 
