@@ -17,7 +17,16 @@ function create(title, body) {
 }
 
 function index() {
-  return posts.data;
+  return new Promise(async (resolve, reject) => {
+    try {
+      let index = await pool.query(
+      "SELECT *FROM posts;",
+    );
+    resolve(index)
+    } catch (err) {
+      return reject(err);
+    }
+  });
 }
 
 function show(id) {
