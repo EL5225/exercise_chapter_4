@@ -26,6 +26,18 @@ function update(id, title, body) {
   fs.writeFileSync("./database/posts.json", JSON.stringify(posts, null, 4));
 }
 
-function destroy(id) {}
+function destroy(id) {
+  const deleteid = posts.data.findIndex((post) => post.id === id);
+
+  if (deleteid !== -1) {
+    posts.data.splice(deleteid, 1);
+
+    fs.writeFileSync("./database/posts.json", JSON.stringify(posts, null, 4));
+
+    console.log("id berhasil dihapus");
+  } else {
+    console.log("id gagal dihapus");
+  }
+}
 
 module.exports = { create, index, show, update, destroy };
