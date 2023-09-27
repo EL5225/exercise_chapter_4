@@ -3,6 +3,7 @@ const { create, index, show, update, destroy } = require("./helpers/crud");
 // test create post
 // create("test title", "test data");
 
+update(1, "update title satu", "update data dua");
 // test show all post
 index()
 // test show detail post by id
